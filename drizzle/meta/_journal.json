@@ -1,0 +1,20 @@
+{
+  "version": "5",
+  "dialect": "pg",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1733298831807,
+      "tag": "0000_handy_siren",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1733299873092,
+      "tag": "0001_modern_falcon",
+      "breakpoints": true
+    }
+  ]
+}
