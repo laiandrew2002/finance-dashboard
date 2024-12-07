@@ -16,7 +16,7 @@ export const useDeleteAccount = (id?: string) => {
        });
 
       if (!response.ok) {
-        throw new Error("Failed to update account");
+        throw new Error("Failed to delete account");
       }
 
       return await response.json();;

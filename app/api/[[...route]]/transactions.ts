@@ -59,7 +59,7 @@ const app = new Hono()
         ).orderBy(desc(transactions.date));
 
       return c.json({ data });
-    }
+    },
   )
   .get(
     '/:id',
@@ -101,7 +101,8 @@ const app = new Hono()
       }
 
       return c.json({ data });
-  })
+    },
+  )
   .post(
     '/',
     clerkMiddleware(),
@@ -122,7 +123,31 @@ const app = new Hono()
         }).returning();
 
       return c.json({ data });
-    }
+    },
+  )
+  .post(
+    '/bulk-create',
+    clerkMiddleware(),
+    zValidator('json', z.array(insertTransactionsSchema.omit({ id: true }))),
+    async (c) => {
+      const auth = await getAuth(c);
+      const values = c.req.valid('json');
+
+      if (!auth?.userId) {
+        return c.json({ error: 'Unauthorized' }, 401);
+      }
+
+      const data = await db
+        .insert(transactions)
+        .values(
+          values.map((value) => ({
+            ...value,
+            id: createId(),
+          }))
+        ).returning();
+
+      return c.json({ data });
+    },
   )
   .post(
     "bulk-delete",
@@ -154,7 +179,7 @@ const app = new Hono()
 
 
       return c.json({ data });
-    }
+    },
   )
   .patch(
     '/:id',
@@ -195,7 +220,7 @@ const app = new Hono()
       }
 
       return c.json({ data });
-    }
+    },
   )
   .delete(
     '/:id',
@@ -233,7 +258,7 @@ const app = new Hono()
       }
 
       return c.json({ data });
-    }
+    },
   );
 
 export default app;
