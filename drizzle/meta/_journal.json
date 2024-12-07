@@ -15,6 +15,13 @@
       "when": 1733299873092,
       "tag": "0001_modern_falcon",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1733476294143,
+      "tag": "0002_cheerful_jane_foster",
+      "breakpoints": true
     }
   ]
 }

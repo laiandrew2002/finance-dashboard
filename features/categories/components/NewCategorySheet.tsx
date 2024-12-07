@@ -1,4 +1,4 @@
-import  { useNewAccount } from "@/features/accounts/hooks/use-new-account";
+import  { useNewCategory } from "@/features/categories/hooks/use-new-category";
 import {
   Sheet,
   SheetContent,
@@ -6,21 +6,21 @@ import {
   SheetHeader,
   SheetTitle,
 } from "@/components/ui/sheet";
-import { AccountForm } from "./AccountForm";
-import { insertAccountSchema } from "@/db/schema";
+import { CategoryForm } from "./CategoryForm";
+import { insertCategoriesSchema } from "@/db/schema";
 import { z } from "zod";
-import { useCreateAccount } from "../api/use-create-account";
+import { useCreateCategory } from "../api/use-create-category";
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-const formSchema = insertAccountSchema.pick({
+const formSchema = insertCategoriesSchema.pick({
   name: true,
 });
 
 type FormValues = z.infer<typeof formSchema>;
 
-export const NewAccountSheet = () => {
-  const { isOpen, onClose } = useNewAccount();
-  const mutation = useCreateAccount();
+export const NewCategorySheet = () => {
+  const { isOpen, onClose } = useNewCategory();
+  const mutation = useCreateCategory();
 
   const onSubmit = (data: FormValues) => {
     mutation.mutate(data, { onSuccess: () => onClose() });
@@ -30,10 +30,10 @@ export const NewAccountSheet = () => {
     <Sheet open={isOpen} onOpenChange={onClose}>
       <SheetContent className="space-y-4">
         <SheetHeader>
-          <SheetTitle>New Account</SheetTitle>
-          <SheetDescription>Create a new account to track your transactions</SheetDescription>
+          <SheetTitle>New Category</SheetTitle>
+          <SheetDescription>Create a new category to organize your transactions</SheetDescription>
         </SheetHeader>
-        <AccountForm
+        <CategoryForm
           onSubmit={onSubmit}
           disabled={mutation.isPending}
           defaultValues={{
