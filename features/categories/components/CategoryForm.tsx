@@ -59,11 +59,11 @@ export const CategoryForm = ({
             <FormItem>
               <FormLabel>Name</FormLabel>
               <FormControl>
-              <Input
-                disabled={disabled}
-                placeholder="e.g. Food, Travel, etc."
-                {...field}
-              />
+                <Input
+                  {...field}
+                  disabled={disabled}
+                  placeholder="e.g. Food, Travel, etc."
+                />
               </FormControl>
             </FormItem>
           )}
