@@ -82,6 +82,7 @@ const app = new Hono()
         currentPeriod.income,
         lastPeriod.income,
       );
+
       const expensesChange = calculatePercentageChange(
         currentPeriod.expenses,
         lastPeriod.expenses,
