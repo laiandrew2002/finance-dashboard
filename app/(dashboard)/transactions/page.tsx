@@ -21,6 +21,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { columns } from "./columns";
 import { UploadButton } from "./UploadButton";
 import { ImportCard } from "./ImportCard";
+import dynamic from "next/dynamic";
 
 enum VARIANTS {
   LIST = "LIST",
@@ -33,7 +34,7 @@ const INITIAL_IMPORT_RESULTS ={
   meta: {},
 };
 
-const TransactionsPage = () => {
+const TransactionsPageComponent = () => {
   const [AccountDialog, confirm] = useSelectAccount();
   const [variant, setVariant] = useState<VARIANTS>(VARIANTS.LIST);
   const [importResults, setImportResults] = useState<typeof INITIAL_IMPORT_RESULTS>(INITIAL_IMPORT_RESULTS);
@@ -136,5 +137,9 @@ const TransactionsPage = () => {
     </div>
   );
 };
+
+const TransactionsPage = dynamic(() => Promise.resolve(TransactionsPageComponent), {
+  ssr: false,
+});
 
 export default TransactionsPage;
