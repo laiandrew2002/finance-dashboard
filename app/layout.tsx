@@ -18,7 +18,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Finance Dashboard",
+  title: "FinTrack",
   description: "A dashboard for managing your finances",
 };
 

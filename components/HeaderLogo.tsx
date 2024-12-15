@@ -7,11 +7,11 @@ export const HeaderLogo = () => {
       <div className="items-center hidden lg:flex">
         <Image
           src="/logo.svg"
-          alt="Finance Dashboard Logo"
+          alt="FinTrack Logo"
           width={28}
           height={28}
         />
-        <p className="text-2xl font-semibold text-white ml-2.5">Finance</p>
+        <p className="text-2xl font-semibold text-white ml-2.5">FinTrack</p>
       </div>
     </Link>
   );

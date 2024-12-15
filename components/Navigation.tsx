@@ -62,7 +62,7 @@ export const Navigation = () => {
             <SheetTitle className="px-2">
               <Image
                 src="/logo.svg"
-                alt="Finance Dashboard Logo"
+                alt="FinTrack Logo"
                 width={28}
                 height={28}
               />
