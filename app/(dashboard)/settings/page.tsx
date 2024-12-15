@@ -6,5 +6,5 @@ const SettingsPage = () => {
       <SettingsCard />
     </div>
   );
-}
+};
 export default SettingsPage;

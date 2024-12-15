@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -14,13 +14,13 @@ import { useConfirm } from "@/hooks/use-confirm";
 
 type Props = {
   id: string;
-}
+};
 
 export const Actions = ({ id }: Props) => {
   const { onOpen } = useOpenAccount();
   const [ConfirmationDialog, confirm] = useConfirm(
     "Delete",
-    "Are you sure you want to delete this account?"
+    "Are you sure you want to delete this account?",
   );
   const deleteMutation = useDeleteAccount(id);
 
@@ -38,20 +38,26 @@ export const Actions = ({ id }: Props) => {
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Button variant="ghost" className="size-8 p-0">
-            <MoreHorizontal className="size-4"/>
+            <MoreHorizontal className="size-4" />
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end">
-          <DropdownMenuItem disabled={deleteMutation.isPending} onClick={() => onOpen(id)}>
-            <Edit className="size-4 mr-2"/>
+          <DropdownMenuItem
+            disabled={deleteMutation.isPending}
+            onClick={() => onOpen(id)}
+          >
+            <Edit className="size-4 mr-2" />
             Edit
           </DropdownMenuItem>
-          <DropdownMenuItem disabled={deleteMutation.isPending} onClick={handleDelete}>
-            <Trash className="size-4 mr-2"/>
+          <DropdownMenuItem
+            disabled={deleteMutation.isPending}
+            onClick={handleDelete}
+          >
+            <Trash className="size-4 mr-2" />
             Delete
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
     </>
   );
-}
+};

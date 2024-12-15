@@ -11,7 +11,8 @@ import { usePathname } from "next/navigation";
 export const Header = () => {
   const pathname = usePathname();
 
-  const isShowFilters = !pathname.startsWith("/accounts") && !pathname.startsWith("/categories");
+  const isShowFilters =
+    !pathname.startsWith("/accounts") && !pathname.startsWith("/categories");
 
   return (
     <header className="bg-gradient-to-b from-blue-700 to-blue-500 px-4 py-8 lg:px-14 pb-36">
@@ -25,7 +26,7 @@ export const Header = () => {
             <UserButton />
           </ClerkLoaded>
           <ClerkLoading>
-            <Loader2 className="size-8 animate-spin text-slate-400"/>
+            <Loader2 className="size-8 animate-spin text-slate-400" />
           </ClerkLoading>
         </div>
         <WelcomeMsg />

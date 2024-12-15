@@ -1,13 +1,13 @@
-import CurrencyInput from 'react-currency-input-field';
-import { Info, MinusCircle, PlusCircle } from 'lucide-react';
+import CurrencyInput from "react-currency-input-field";
+import { Info, MinusCircle, PlusCircle } from "lucide-react";
 
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from '@/components/ui/tooltip';
+} from "@/components/ui/tooltip";
 
 type Props = {
   value: string;
@@ -37,7 +37,7 @@ export const AmountInput = ({
         <Tooltip delayDuration={100}>
           <TooltipTrigger asChild>
             <button
-              type='button'
+              type="button"
               onClick={onReverseValue}
               className={cn(
                 "bg-slate-400 hover:bg-slate-500 absolute top-1.5 left-1.5 rounded-md p-2 flex items-center justify-center transition",
@@ -56,7 +56,7 @@ export const AmountInput = ({
         </Tooltip>
       </TooltipProvider>
       <CurrencyInput
-        prefix='$'
+        prefix="$"
         className="pl-10 flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
         placeholder={placeholder}
         value={value}
@@ -65,10 +65,10 @@ export const AmountInput = ({
         onValueChange={onChange}
         disabled={disabled}
       />
-      <p className='text-xs text-muted-foreground mt-2'>
+      <p className="text-xs text-muted-foreground mt-2">
         {isIncome && "This will count as income"}
         {isExpense && "This will count as expense"}
       </p>
     </div>
   );
-}
+};

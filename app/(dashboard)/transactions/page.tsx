@@ -10,12 +10,7 @@ import { useBulkDeleteTransaction } from "@/features/transactions/api/use-bulk-d
 import { useSelectAccount } from "@/features/accounts/hooks/use-select-account";
 import { useBulkCreateTransaction } from "@/features/transactions/api/use-bulk-create-transaction";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { DataTable } from "@/components/DataTable";
 import { Skeleton } from "@/components/ui/skeleton";
 import { columns } from "./columns";
@@ -26,9 +21,9 @@ import dynamic from "next/dynamic";
 enum VARIANTS {
   LIST = "LIST",
   IMPORT = "IMPORT",
-};
+}
 
-const INITIAL_IMPORT_RESULTS ={
+const INITIAL_IMPORT_RESULTS = {
   data: [],
   errors: [],
   meta: {},
@@ -37,8 +32,10 @@ const INITIAL_IMPORT_RESULTS ={
 const TransactionsPageComponent = () => {
   const [AccountDialog, confirm] = useSelectAccount();
   const [variant, setVariant] = useState<VARIANTS>(VARIANTS.LIST);
-  const [importResults, setImportResults] = useState<typeof INITIAL_IMPORT_RESULTS>(INITIAL_IMPORT_RESULTS);
-  
+  const [importResults, setImportResults] = useState<
+    typeof INITIAL_IMPORT_RESULTS
+  >(INITIAL_IMPORT_RESULTS);
+
   const onUpload = (results: typeof INITIAL_IMPORT_RESULTS) => {
     setImportResults(results);
     setVariant(VARIANTS.IMPORT);
@@ -58,12 +55,12 @@ const TransactionsPageComponent = () => {
   const isDisabled = deleteTransaction.isPending || transactionsQuery.isLoading;
 
   const onSubmitImport = async (
-    values: typeof transactionSchema.$inferInsert[],
+    values: (typeof transactionSchema.$inferInsert)[],
   ) => {
     const accountId = await confirm();
 
     if (!accountId) {
-      return toast.error('Please select an account to continue.');
+      return toast.error("Please select an account to continue.");
     }
 
     const data = values.map((value) => ({
@@ -74,10 +71,10 @@ const TransactionsPageComponent = () => {
     return createTransactions.mutate(data, {
       onSuccess: () => {
         onCancelImport();
-        toast.success('Transactions import successfully.');
+        toast.success("Transactions import successfully.");
       },
     });
-  }
+  };
 
   if (transactionsQuery.isLoading) {
     return (
@@ -94,7 +91,7 @@ const TransactionsPageComponent = () => {
         </Card>
       </div>
     );
-  };
+  }
 
   if (variant === VARIANTS.IMPORT) {
     return (
@@ -113,10 +110,17 @@ const TransactionsPageComponent = () => {
     <div className="max-w-screen-2xl mx-auto pb-10 -mt-24">
       <Card className="border-none drop-shadow-sm">
         <CardHeader className="gay-y-2 lg:flex-row lg:items-center lg:justify-between">
-          <CardTitle className="text-xl line-clamp-1">Transactions History</CardTitle>
+          <CardTitle className="text-xl line-clamp-1">
+            Transactions History
+          </CardTitle>
           <div className="flex flex-col items-center lg:flex-row gap-x-2 gap-y-2">
-            <Button size="sm" className="w-full lg:w-auto" onClick={newTransaction.onOpen}>
-              <Plus className="size-4 mr-2" />Add new
+            <Button
+              size="sm"
+              className="w-full lg:w-auto"
+              onClick={newTransaction.onOpen}
+            >
+              <Plus className="size-4 mr-2" />
+              Add new
             </Button>
             <UploadButton onUpload={onUpload} />
           </div>
@@ -138,8 +142,11 @@ const TransactionsPageComponent = () => {
   );
 };
 
-const TransactionsPage = dynamic(() => Promise.resolve(TransactionsPageComponent), {
-  ssr: false,
-});
+const TransactionsPage = dynamic(
+  () => Promise.resolve(TransactionsPageComponent),
+  {
+    ssr: false,
+  },
+);
 
 export default TransactionsPage;

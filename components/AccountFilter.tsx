@@ -42,7 +42,7 @@ export const AccountFilter = () => {
         url: pathname,
         query,
       },
-      { skipNull: true, skipEmptyString: true }
+      { skipNull: true, skipEmptyString: true },
     );
 
     router.push(url);

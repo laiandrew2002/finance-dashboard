@@ -29,22 +29,15 @@ export const PlaidConnect = () => {
     env: "sandbox",
   });
 
-  const isDisabled =
-    !plaid.ready ||
-    exchangePublicToken.isPending
-  
+  const isDisabled = !plaid.ready || exchangePublicToken.isPending;
+
   const onClick = () => {
     plaid.open();
   };
 
   return (
-    <Button
-      onClick={onClick}
-      disabled={isDisabled}
-      size="sm"
-      variant="ghost"
-    >
+    <Button onClick={onClick} disabled={isDisabled} size="sm" variant="ghost">
       Connect
     </Button>
   );
-}
+};

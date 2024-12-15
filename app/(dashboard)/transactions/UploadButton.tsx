@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 
 type Props = {
   onUpload: (results: any) => void;
-}
+};
 
 export const UploadButton = ({ onUpload }: Props) => {
   const { CSVReader } = useCSVReader();
@@ -13,11 +13,7 @@ export const UploadButton = ({ onUpload }: Props) => {
   return (
     <CSVReader onUploadAccepted={onUpload}>
       {({ getRootProps }: any) => (
-        <Button
-          {...getRootProps()}
-          className="w-full lg:w-auto"
-          size="sm"
-        >
+        <Button {...getRootProps()} className="w-full lg:w-auto" size="sm">
           <Upload className="size-4 mr-2" />
           Import
         </Button>

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { Edit, MoreHorizontal, Trash } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -14,13 +14,13 @@ import { useDeleteTransaction } from "@/features/transactions/api/use-delete-tra
 
 type Props = {
   id: string;
-}
+};
 
 export const Actions = ({ id }: Props) => {
   const { onOpen } = useOpenTransaction();
   const [ConfirmationDialog, confirm] = useConfirm(
     "Delete",
-    "Are you sure you want to delete this transaction?"
+    "Are you sure you want to delete this transaction?",
   );
 
   const deleteMutation = useDeleteTransaction(id);
@@ -39,20 +39,26 @@ export const Actions = ({ id }: Props) => {
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Button variant="ghost" className="size-8 p-0">
-            <MoreHorizontal className="size-4"/>
+            <MoreHorizontal className="size-4" />
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end">
-          <DropdownMenuItem disabled={deleteMutation.isPending} onClick={() => onOpen(id)}>
-            <Edit className="size-4 mr-2"/>
+          <DropdownMenuItem
+            disabled={deleteMutation.isPending}
+            onClick={() => onOpen(id)}
+          >
+            <Edit className="size-4 mr-2" />
             Edit
           </DropdownMenuItem>
-          <DropdownMenuItem disabled={deleteMutation.isPending} onClick={handleDelete}>
-            <Trash className="size-4 mr-2"/>
+          <DropdownMenuItem
+            disabled={deleteMutation.isPending}
+            onClick={handleDelete}
+          >
+            <Trash className="size-4 mr-2" />
             Delete
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
     </>
   );
-}
+};

@@ -1,6 +1,6 @@
-"use client"
+"use client";
 
-import * as React from "react"
+import * as React from "react";
 import {
   ColumnDef,
   ColumnFiltersState,
@@ -12,7 +12,7 @@ import {
   getPaginationRowModel,
   getSortedRowModel,
   useReactTable,
-} from "@tanstack/react-table"
+} from "@tanstack/react-table";
 
 import {
   Table,
@@ -21,16 +21,16 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table"
-import { Button } from "./ui/button"
-import { Input } from "@/components/ui/input"
-import { useConfirm } from "@/hooks/use-confirm"
-import { Trash } from "lucide-react"
+} from "@/components/ui/table";
+import { Button } from "./ui/button";
+import { Input } from "@/components/ui/input";
+import { useConfirm } from "@/hooks/use-confirm";
+import { Trash } from "lucide-react";
 
 interface DataTableProps<TData, TValue> {
-  columns: ColumnDef<TData, TValue>[]
-  data: TData[]
-  filterKey: string
+  columns: ColumnDef<TData, TValue>[];
+  data: TData[];
+  filterKey: string;
   onDelete: (rows: Row<TData>[]) => void;
   disabled?: boolean;
 }
@@ -46,12 +46,12 @@ export function DataTable<TData, TValue>({
     "Delete",
     "Are you sure you want to delete the selected rows?",
   );
-  
-  const [sorting, setSorting] = React.useState<SortingState>([])
+
+  const [sorting, setSorting] = React.useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
-    []
-  )
-  const [rowSelection, setRowSelection] = React.useState({})
+    [],
+  );
+  const [rowSelection, setRowSelection] = React.useState({});
 
   const table = useReactTable({
     data,
@@ -68,7 +68,7 @@ export function DataTable<TData, TValue>({
       columnFilters,
       rowSelection,
     },
-  })
+  });
 
   return (
     <div>
@@ -87,11 +87,11 @@ export function DataTable<TData, TValue>({
             variant="outline"
             disabled={disabled}
             size="sm"
-            onClick={async() => {
+            onClick={async () => {
               const ok = await confirm();
               if (ok) {
                 onDelete(table.getFilteredSelectedRowModel().rows);
-                table.resetColumnFilters()
+                table.resetColumnFilters();
               }
             }}
             className="ml-auto font-normal text-xs"
@@ -113,10 +113,10 @@ export function DataTable<TData, TValue>({
                         ? null
                         : flexRender(
                             header.column.columnDef.header,
-                            header.getContext()
+                            header.getContext(),
                           )}
                     </TableHead>
-                  )
+                  );
                 })}
               </TableRow>
             ))}
@@ -130,14 +130,20 @@ export function DataTable<TData, TValue>({
                 >
                   {row.getVisibleCells().map((cell) => (
                     <TableCell key={cell.id}>
-                      {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                      {flexRender(
+                        cell.column.columnDef.cell,
+                        cell.getContext(),
+                      )}
                     </TableCell>
                   ))}
                 </TableRow>
               ))
             ) : (
               <TableRow>
-                <TableCell colSpan={columns.length} className="h-24 text-center">
+                <TableCell
+                  colSpan={columns.length}
+                  className="h-24 text-center"
+                >
                   No results.
                 </TableCell>
               </TableRow>
@@ -168,5 +174,5 @@ export function DataTable<TData, TValue>({
         </Button>
       </div>
     </div>
-  )
+  );
 }

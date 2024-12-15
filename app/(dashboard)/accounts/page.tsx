@@ -5,12 +5,7 @@ import { useNewAccount } from "@/features/accounts/hooks/use-new-account";
 import { useGetAccounts } from "@/features/accounts/api/use-get-accounts";
 import { useBulkDeleteAccount } from "@/features/accounts/api/use-bulk-delete-account";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { columns } from "./columns";
 import { DataTable } from "@/components/DataTable";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -38,7 +33,7 @@ const AccountsPage = () => {
         </Card>
       </div>
     );
-  };
+  }
 
   return (
     <div className="max-w-screen-2xl mx-auto pb-10 -mt-24">
@@ -46,7 +41,8 @@ const AccountsPage = () => {
         <CardHeader className="gay-y-2 lg:flex-row lg:items-center lg:justify-between">
           <CardTitle className="text-xl line-clamp-1">Accounts</CardTitle>
           <Button size="sm" onClick={newAccount.onOpen}>
-            <Plus className="size-4 mr-2" />Add new
+            <Plus className="size-4 mr-2" />
+            Add new
           </Button>
         </CardHeader>
         <CardContent>

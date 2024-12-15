@@ -6,7 +6,13 @@ import Image from "next/image";
 import { Menu } from "lucide-react";
 import { useMedia } from "react-use";
 import { NavButton } from "./NavButton";
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "./ui/sheet";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "./ui/sheet";
 import { Button } from "./ui/button";
 
 const routes = [
@@ -55,7 +61,7 @@ export const Navigation = () => {
           <SheetHeader>
             <SheetTitle className="px-2">
               <Image
-                src='/logo.svg'
+                src="/logo.svg"
                 alt="Finance Dashboard Logo"
                 width={28}
                 height={28}
@@ -80,7 +86,7 @@ export const Navigation = () => {
   }
 
   return (
-    <nav className="hidden lg:flex items-center gap-x-2 overflow-x-auto">      
+    <nav className="hidden lg:flex items-center gap-x-2 overflow-x-auto">
       {routes.map((route) => (
         <NavButton
           key={route.href}

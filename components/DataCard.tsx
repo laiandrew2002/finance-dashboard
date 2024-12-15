@@ -1,49 +1,43 @@
 import { IconType } from "react-icons";
-import { VariantProps, cva } from 'class-variance-authority';
+import { VariantProps, cva } from "class-variance-authority";
 import {
   Card,
   CardContent,
   CardDescription,
   CardTitle,
-  CardHeader
+  CardHeader,
 } from "@/components/ui/card";
 import { CountUp } from "@/components/CountUp";
 import { Skeleton } from "@/components/ui/skeleton";
 import { cn, formatCurrency, formatPercentage } from "@/lib/utils";
 
-const boxVariant = cva(
-  "rounded-md p-3",
-  {
-    variants: {
-      variant: {
-        default: "bg-blue-500/20",
-        success: "bg-emerald-500/20",
-        danger: "bg-rose-500/20",
-        warning: "bg-yellow-500/20",
-      },
+const boxVariant = cva("rounded-md p-3", {
+  variants: {
+    variant: {
+      default: "bg-blue-500/20",
+      success: "bg-emerald-500/20",
+      danger: "bg-rose-500/20",
+      warning: "bg-yellow-500/20",
     },
-    defaultVariants: {
-      variant: "default",
-    },
-  }
-)
+  },
+  defaultVariants: {
+    variant: "default",
+  },
+});
 
-const iconVariant = cva(
-  "size-6",
-  {
-    variants: {
-      variant: {
-        default: "fill-blue-500",
-        success: "fill-emerald-500",
-        danger: "fill-rose-500",
-        warning: "fill-yellow-500",
-      },
+const iconVariant = cva("size-6", {
+  variants: {
+    variant: {
+      default: "fill-blue-500",
+      success: "fill-emerald-500",
+      danger: "fill-rose-500",
+      warning: "fill-yellow-500",
     },
-    defaultVariants: {
-      variant: "default",
-    },
-  }
-)
+  },
+  defaultVariants: {
+    variant: "default",
+  },
+});
 
 type BoxVariants = VariantProps<typeof boxVariant>;
 type IconVariants = VariantProps<typeof iconVariant>;
@@ -64,19 +58,17 @@ export const DataCard = ({
   variant,
   dateRange,
 }: DataCardProps) => {
-
   return (
     <Card className="border-none drop-shadow-sm">
       <CardHeader className="flex flex-row items-center justify-between gap-x-4">
         <div className="space-y-2">
           <CardTitle className="text-2xl line-clamp-1">{title}</CardTitle>
-          <CardDescription className="line-clamp-1">{dateRange}</CardDescription>
+          <CardDescription className="line-clamp-1">
+            {dateRange}
+          </CardDescription>
         </div>
-        <div className={cn(
-          "shrink-0",
-          boxVariant({ variant }),
-        )}>
-          <Icon className={cn(iconVariant({ variant }))}/>
+        <div className={cn("shrink-0", boxVariant({ variant }))}>
+          <Icon className={cn(iconVariant({ variant }))} />
         </div>
       </CardHeader>
       <CardContent>
@@ -90,12 +82,15 @@ export const DataCard = ({
             formattingFn={formatCurrency}
           />
         </h1>
-        <p className={cn(
-          "text-muted-foreground text-sm line-clamp-1",
-          percentageChange > 0 && "text-emerald-500",
-          percentageChange < 0 && "text-rose-500",
-        )}>
-          {formatPercentage(percentageChange, { addPrefix: true})} from last period
+        <p
+          className={cn(
+            "text-muted-foreground text-sm line-clamp-1",
+            percentageChange > 0 && "text-emerald-500",
+            percentageChange < 0 && "text-rose-500",
+          )}
+        >
+          {formatPercentage(percentageChange, { addPrefix: true })} from last
+          period
         </p>
       </CardContent>
     </Card>

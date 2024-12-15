@@ -13,7 +13,7 @@ type Props = {
   body: string[][];
   selectedColumns: Record<string, string | null>;
   onTableHeadSelectChange: (columnIndex: number, value: string | null) => void;
-}
+};
 
 export const ImportTable = ({
   headers,
@@ -21,7 +21,6 @@ export const ImportTable = ({
   selectedColumns,
   onTableHeadSelectChange,
 }: Props) => {
-
   return (
     <div className="rounded-md border overflow-hidden">
       <Table>
@@ -42,9 +41,7 @@ export const ImportTable = ({
           {body.map((row, index) => (
             <TableRow key={index}>
               {row.map((cell, index) => (
-                <TableCell key={index}>
-                  {cell}
-                </TableCell>
+                <TableCell key={index}>{cell}</TableCell>
               ))}
             </TableRow>
           ))}

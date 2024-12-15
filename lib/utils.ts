@@ -1,14 +1,9 @@
-import { clsx, type ClassValue } from "clsx"
-import {
-  eachDayOfInterval,
-  format,
-  isSameDay,
-  subDays,
-} from "date-fns";
-import { twMerge } from "tailwind-merge"
+import { clsx, type ClassValue } from "clsx";
+import { eachDayOfInterval, format, isSameDay, subDays } from "date-fns";
+import { twMerge } from "tailwind-merge";
 
 export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs))
+  return twMerge(clsx(inputs));
 }
 
 export function convertAmountFromMiliunits(amount: number) {
@@ -27,10 +22,7 @@ export function formatCurrency(amount: number) {
   }).format(amount);
 }
 
-export function calculatePercentageChange(
-  current: number,
-  previous: number,
-) {
+export function calculatePercentageChange(current: number, previous: number) {
   if (previous === 0) {
     return previous === current ? 0 : 100;
   }
@@ -44,7 +36,7 @@ export function fillMissingDays(
     expenses: number;
   }[],
   startDate: Date,
-  endDate: Date
+  endDate: Date,
 ) {
   if (!activeDays.length) {
     return [];
@@ -73,7 +65,7 @@ export function fillMissingDays(
 type Period = {
   from: Date | string | undefined;
   to: Date | string | undefined;
-}
+};
 
 export function formatDateRange(period: Period) {
   const defaultTo = new Date();

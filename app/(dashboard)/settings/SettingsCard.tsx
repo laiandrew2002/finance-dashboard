@@ -1,12 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import {
-    Card,
-    CardContent,
-    CardHeader,
-    CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 
 import { PlaidConnect } from "@/components/PlaidConnect";
@@ -16,10 +11,8 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { Loader2 } from "lucide-react";
 
 export const SettingsCard = () => {
-  const {
-    data: connectedBank,
-    isLoading: isLoadingConnectedBank
-  } = useGetConnectedBank();
+  const { data: connectedBank, isLoading: isLoadingConnectedBank } =
+    useGetConnectedBank();
 
   if (isLoadingConnectedBank) {
     return (
@@ -41,9 +34,7 @@ export const SettingsCard = () => {
   return (
     <Card className="border-none drop-shadow-sm">
       <CardHeader>
-        <CardTitle className="text-xl line-clamp-1">
-          Settings
-        </CardTitle>
+        <CardTitle className="text-xl line-clamp-1">Settings</CardTitle>
       </CardHeader>
       <CardContent>
         <Separator />
@@ -52,20 +43,18 @@ export const SettingsCard = () => {
             Bank Account
           </p>
           <div className="w-full flex items-center justify-between">
-            <div className={cn(
-              "text-sm truncate flex items-center",
-              !connectedBank && "text-muted-foreground"
-            )}>
+            <div
+              className={cn(
+                "text-sm truncate flex items-center",
+                !connectedBank && "text-muted-foreground",
+              )}
+            >
               {connectedBank
                 ? "Bank account connected"
-                : "No bank account connected"
-              }
+                : "No bank account connected"}
             </div>
-              {connectedBank
-                ? <PlaidDisconnect />
-                : <PlaidConnect />
-              }
-            </div>
+            {connectedBank ? <PlaidDisconnect /> : <PlaidConnect />}
+          </div>
         </div>
       </CardContent>
     </Card>
