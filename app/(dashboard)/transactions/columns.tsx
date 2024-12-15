@@ -10,9 +10,9 @@ import { client } from "@/lib/hono";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Badge } from "@/components/ui/badge";
-import { Actions } from "./Actions";
-import { AccountColumn } from "./AccountColumn";
-import { CategoryColumn } from "./CategoryColumn";
+import { Actions } from "./actions";
+import { AccountColumn } from "@/app/(dashboard)/transactions/AccountColumn";
+import { CategoryColumn } from "@/app/(dashboard)/transactions/CategoryColumn";
 
 export type ResponseType = InferResponseType<
   typeof client.api.transactions.$get,
