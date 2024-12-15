@@ -4,7 +4,9 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 import { client } from "@/lib/hono";
 
-type ResponseType = InferResponseType<typeof client.api.accounts[":id"]["$delete"]>;
+type ResponseType = InferResponseType<
+  (typeof client.api.accounts)[":id"]["$delete"]
+>;
 
 export const useDeleteAccount = (id?: string) => {
   const queryClient = useQueryClient();
@@ -13,13 +15,13 @@ export const useDeleteAccount = (id?: string) => {
     mutationFn: async () => {
       const response = await client.api.accounts[":id"]["$delete"]({
         param: { id },
-       });
+      });
 
       if (!response.ok) {
         throw new Error("Failed to delete account");
       }
 
-      return await response.json();;
+      return await response.json();
     },
     onSuccess: () => {
       toast.success("Account deleted");

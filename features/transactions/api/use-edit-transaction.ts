@@ -4,8 +4,12 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 import { client } from "@/lib/hono";
 
-type ResponseType = InferResponseType<typeof client.api.transactions[":id"]["$patch"]>;
-type RequestType = InferRequestType<typeof client.api.transactions[":id"]["$patch"]>["json"];
+type ResponseType = InferResponseType<
+  (typeof client.api.transactions)[":id"]["$patch"]
+>;
+type RequestType = InferRequestType<
+  (typeof client.api.transactions)[":id"]["$patch"]
+>["json"];
 
 export const useEditTransaction = (id?: string) => {
   const queryClient = useQueryClient();
@@ -15,13 +19,13 @@ export const useEditTransaction = (id?: string) => {
       const response = await client.api.transactions[":id"]["$patch"]({
         json,
         param: { id },
-       });
+      });
 
       if (!response.ok) {
         throw new Error("Failed to update transaction");
       }
 
-      return await response.json();;
+      return await response.json();
     },
     onSuccess: () => {
       toast.success("Transaction updated");

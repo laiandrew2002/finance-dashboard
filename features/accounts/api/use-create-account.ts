@@ -18,7 +18,7 @@ export const useCreateAccount = () => {
         throw new Error("Failed to create account");
       }
 
-      return await response.json();;
+      return await response.json();
     },
     onSuccess: () => {
       toast.success("Account created");

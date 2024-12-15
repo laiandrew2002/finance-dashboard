@@ -18,7 +18,7 @@ export const useCreateCategory = () => {
         throw new Error("Failed to create category");
       }
 
-      return await response.json();;
+      return await response.json();
     },
     onSuccess: () => {
       toast.success("Category created");
