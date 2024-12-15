@@ -42,7 +42,11 @@ export function DataTable<TData, TValue>({
   onDelete,
   disabled,
 }: DataTableProps<TData, TValue>) {
-  const [ConfirmationDialog, confirm] = useConfirm("Delete", "Are you sure you want to delete the selected rows?")
+  const [ConfirmationDialog, confirm] = useConfirm(
+    "Delete",
+    "Are you sure you want to delete the selected rows?",
+  );
+  
   const [sorting, setSorting] = React.useState<SortingState>([])
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
     []
