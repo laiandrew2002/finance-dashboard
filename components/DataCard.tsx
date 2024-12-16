@@ -28,8 +28,8 @@ const boxVariant = cva("rounded-md p-3", {
 const iconVariant = cva("size-6", {
   variants: {
     variant: {
-      default: "fill-blue-500",
-      success: "fill-emerald-500",
+      default: "fill-blue-800",
+      success: "fill-emerald-700",
       danger: "fill-rose-500",
       warning: "fill-yellow-500",
     },
