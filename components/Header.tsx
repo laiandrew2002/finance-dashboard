@@ -7,6 +7,7 @@ import { Loader2 } from "lucide-react";
 import { WelcomeMsg } from "./WelcomeMsg";
 import { Filters } from "./Filters";
 import { usePathname } from "next/navigation";
+import FinancialAdvice from "./FinancialAdvise";
 
 export const Header = () => {
   const pathname = usePathname();
@@ -30,6 +31,7 @@ export const Header = () => {
           </ClerkLoading>
         </div>
         <WelcomeMsg />
+        <FinancialAdvice />
         {isShowFilters && <Filters />}
       </div>
     </header>
