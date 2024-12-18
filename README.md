@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+A full-stack Income and Expenses Tracker SaaS web application built with Next.js, featuring AI-powered personalized financial advice to help users manage their finances effectively.
+
+## Overview
+
+This finance tracker application provides users with a comprehensive summary of their financial data, including income, expenses, and savings. Users has the ability to enter the transactions manually, import transactions from CSV files, or connect their bank accounts to automatically import transactions. The application also provides personalized financial advice based on the user's financial data.
+
+## Features
+
+- **Responsive Design**: Adjusts layout for desktop, tablet, and mobile views.
+- **Personalized Financial Advice**: AI-powered financial advice based on user's financial data.
+- **Transaction Management**: Users can enter transactions manually, import transactions from CSV files, or connect their bank accounts to automatically import transactions.
+- **Data Visualization**: Provides a visual representation of user's financial data, including income, expenses, and savings with charts and graphs.
+
+## Technologies
+- Frontend:
+  - **Next.js**: Client-side, server-side rendering and static site generation.
+  - **React**: UI components.
+  - **TypeScript**: Type safety for JavaScript code.
+  - **Shadcn**: UI components.
+  - **Zustand**: State management for React applications.
+  - **Tailwind CSS**: Styling.
+  
+- Backend:
+  - **Hono**: Server-side framework.
+  - **Drizzle**: Database ORM.
+  - **PostgreSQL**: Database.
+  - **Clerk**: Authentication and authorization.
+  - **Google Generative AI**: AI-powered personalized financial advice.
 
 ## Getting Started
 
 First, run the development server:
 
+1. Clone the repository:
+```bash
+git clone <repo_url>
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Create a `.env` file based on the `.env.example` file:
+```bash
+cp .env.example .env
+```
+
+Setup Clerk and PostgreSQL by obtaining a publishable key and secret key from [Clerk](https://clerk.com/). Then, update the `.env` file
+
+4. Start the development server:
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
 ## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+To learn more about the technologies used in this project, take a look at the following resources:
 
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [Zustand](https://github.com/pmndrs/zustand) - a state management library for React.
+- [Shadcn](https://ui.shadcn.com/) - a collection of accessible, composable, and customizable React components.
+- [Tailwind CSS](https://tailwindcss.com/) - utility-first CSS framework.
+- [Hono](https://hono.dev/) - a fast, lightweight and flexible web framework for Node.js.
+- [Drizzle](https://drizzle.org/) - a database ORM for Node.js.
+- [Clerk](https://clerk.com/) - a powerful and easy-to-use authentication and authorization solution for web and mobile applications.
+- [Google Generative AI](https://cloud.google.com/generative-ai) - a powerful and flexible AI platform for generating human-like text, images, and voice.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
 ## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The web application is deployed on Vercel at [https://finance-tracker-pied-tau.vercel.app/](https://finance-tracker-pied-tau.vercel.app/).
