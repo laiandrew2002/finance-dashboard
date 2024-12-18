@@ -27,6 +27,12 @@ This finance tracker application provides users with a comprehensive summary of 
   - **Clerk**: Authentication and authorization.
   - **Google Generative AI**: AI-powered personalized financial advice.
 
+## Screenshots
+
+![Screenshot 1](./assets/finance-1.png)
+![Screenshot 2](./assets/finance-2.png)
+![Screenshot 3](./assets/finance-3.png)
+
 ## Getting Started
 
 First, run the development server:
