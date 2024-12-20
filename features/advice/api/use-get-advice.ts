@@ -2,9 +2,9 @@ import { useQuery } from "@tanstack/react-query";
 import { client } from "@/lib/hono";
 
 export const useGetAdvice = (
-  totalIncome: number,
-  totalExpenses: number,
-  totalSavings: number,
+  totalIncome?: number,
+  totalExpenses?: number,
+  totalSavings?: number,
 ) => {
   const query = useQuery({
     queryKey: ["advice"],
