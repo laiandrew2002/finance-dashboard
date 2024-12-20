@@ -7,6 +7,7 @@ import {
 } from "recharts";
 
 import { formatCurrency } from "@/lib/utils";
+import { useTheme } from "next-themes";
 
 const COLORS = ["#0062FF", "#12C6FF", "#FF647F", "#FF9354"];
 
@@ -18,6 +19,8 @@ type Props = {
 };
 
 export const RadialVariant = ({ data = [] }: Props) => {
+  const { theme } = useTheme();
+
   return (
     <ResponsiveContainer width="100%" height={350}>
       <RadialBarChart
@@ -33,7 +36,9 @@ export const RadialVariant = ({ data = [] }: Props) => {
       >
         <RadialBar
           label={{ position: "insideStart", fill: "#fff", fontSize: "12px" }}
-          background
+          background={{
+            fill: theme === "dark" ? "#494949" : "#d2d2d2",
+          }}
           dataKey="value"
         />
         <Legend
