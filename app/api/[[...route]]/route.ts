@@ -5,6 +5,7 @@ import categories from "./categories";
 import transactions from "./transactions";
 import summary from "./summary";
 import plaid from "./plaid";
+import financialAdvise from "./financial-advise";
 // import { HTTPException } from 'hono/http-exception';
 
 export const runtime = "edge";
@@ -24,7 +25,8 @@ const routes = app
   .route("/categories", categories)
   .route("/transactions", transactions)
   .route("/summary", summary)
-  .route("/plaid", plaid);
+  .route("/plaid", plaid)
+  .route("/financial-advise", financialAdvise);
 
 export const GET = handle(app);
 export const POST = handle(app);
