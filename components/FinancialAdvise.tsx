@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { LiaReact } from "react-icons/lia";
 import { useGetSummary } from "@/features/summary/api/use-get-summary";
 import { Skeleton } from "./ui/skeleton";
+import ReactMarkdown from "react-markdown";
 
 const FinancialAdvice = () => {
   const { data, isLoading: isLoadingSummary } = useGetSummary();
@@ -34,7 +35,7 @@ const FinancialAdvice = () => {
               <Skeleton className="h-6 w-24 bg-gradient-to-l" />
             </div>
           )}
-          <p>{advise}</p>
+          <ReactMarkdown>{advise}</ReactMarkdown>
         </CardContent>
       </Card>
     </div>

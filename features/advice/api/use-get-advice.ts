@@ -21,7 +21,7 @@ export const useGetAdvice = (
         throw new Error("Failed to fetch advice");
       }
 
-      const { data } = await response.json();
+      const { data } = await response?.json();
 
       return data;
     },
