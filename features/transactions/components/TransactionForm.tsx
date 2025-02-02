@@ -80,7 +80,10 @@ export const TransactionForm = ({
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(handleSubmit)} className="space-y-4 pt-4">
+      <form
+        onSubmit={form.handleSubmit(handleSubmit)}
+        className="space-y-4 pt-4"
+      >
         <FormField
           name="date"
           control={form.control}
@@ -143,7 +146,7 @@ export const TransactionForm = ({
               <FormControl>
                 <Input
                   {...field}
-                  value={field.value ?? ''}
+                  value={field.value ?? ""}
                   disabled={disabled}
                   placeholder="Add a payee"
                 />
@@ -184,20 +187,21 @@ export const TransactionForm = ({
             </FormItem>
           )}
         />
-      <Button className="w-full" disabled={disabled}>
-        {id ? "Save changes" : "Create transaction"}
-      </Button>
-      {!!id && (
-        <Button
-          type="button"
-          disabled={disabled}
-          onClick={handleDelete}
-          className="w-full"
-          variant="outline"
-        >
-          <Trash className="size-4 mr-2" />Delete transaction
+        <Button className="w-full" disabled={disabled}>
+          {id ? "Save changes" : "Create transaction"}
         </Button>
-      )}
+        {!!id && (
+          <Button
+            type="button"
+            disabled={disabled}
+            onClick={handleDelete}
+            className="w-full"
+            variant="outline"
+          >
+            <Trash className="size-4 mr-2" />
+            Delete transaction
+          </Button>
+        )}
       </form>
     </Form>
   );

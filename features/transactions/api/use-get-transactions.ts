@@ -12,7 +12,9 @@ export const useGetTransactions = () => {
   const query = useQuery({
     queryKey: ["transactions", { from, to, accountId }],
     queryFn: async () => {
-      const response = await client.api.transactions.$get({ query: { from, to, accountId } });
+      const response = await client.api.transactions.$get({
+        query: { from, to, accountId },
+      });
 
       if (!response.ok) {
         throw new Error("Failed to fetch transactions");

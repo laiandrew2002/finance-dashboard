@@ -30,6 +30,7 @@ export const useGetAdvice = (
       totalExpenses !== undefined &&
       totalSavings !== undefined,
     staleTime: 1000 * 60 * 60,
+    gcTime: 2 * 60 * 60 * 1000,
   });
 
   return query;
