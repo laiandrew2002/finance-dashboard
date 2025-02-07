@@ -22,11 +22,11 @@ export const Highlight = ({
 
 const Testimonials = () => {
   return (
-    <div className="flex flex-col items-center justify-center w-full">
+    <div className="flex flex-col items-center justify-center w-full my-12">
       <h2 className="mb-4 text-3xl md:text-5xl bg-clip-text font-bold text-transparent bg-gradient-to-r from-neutral-100 to-neutral-600 md:text-center font-sans">
         What Our Users Say
       </h2>
-      <div className="light flex items-center justify-center w-full h-[24rem]">
+      <div className="light-theme flex items-center justify-center w-full h-[24rem]">
         <CardStack items={CARDS} />
       </div>
     </div>

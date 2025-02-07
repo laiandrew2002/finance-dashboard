@@ -2,6 +2,7 @@ import HowItWorks from "@/components/HowItWorks";
 import LandingFeatures from "@/components/LandingFeatures";
 import { LandingFooter } from "@/components/LandingFooter";
 import LandingTopBar from "@/components/LandingTopBar";
+import FAQ from "@/components/Faq";
 import Testimonials from "@/components/Testimonials";
 import { Button } from "@/components/ui/button";
 import { HeroParallax } from "@/components/ui/connect-parallax";
@@ -9,6 +10,7 @@ import { ContainerScroll } from "@/components/ui/container-scroll-animation";
 import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
 import { clients, products } from "@/lib/constant";
 import Image from "next/image";
+import Pricing from "@/components/ui/Pricing";
 
 export default function Page() {
   return (
@@ -65,9 +67,14 @@ export default function Page() {
       <section className="w-full" id="testimonials">
         <Testimonials />
       </section>
-      {/* Pricing
-      FAQ
-      Footer */}
+
+      <section className="w-full" id="pricing">
+        <Pricing />
+      </section>
+
+      <section className="w-full" id="faq">
+        <FAQ />
+      </section>
       <LandingFooter />
     </main>
   );
