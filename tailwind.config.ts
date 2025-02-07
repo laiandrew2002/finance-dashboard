@@ -60,6 +60,15 @@ export default {
       animation: {
         "spin-fast": "spin 0.5s linear infinite",
         "spin-slow": "spin 3s linear infinite",
+        scroll:
+          "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
+      },
+      keyframes: {
+        scroll: {
+          to: {
+            transform: "translate(calc(-50% - 0.5rem))",
+          },
+        },
       },
     },
   },
