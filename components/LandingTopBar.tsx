@@ -43,7 +43,7 @@ const LandingTopBar = () => {
         </ul>
       </nav>
       <aside className="flex items-center gap-4">
-        <Link href="#" className="w-full md:w-auto">
+        <Link href="/" className="w-full md:w-auto">
           <button className="p-[3px] relative w-full md:w-auto">
             <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-900 rounded-full" />
             <div className="text-sm md:text-lg px-8 py-4 bg-black rounded-full relative group transition duration-200 text-slate-100 hover:bg-transparent">

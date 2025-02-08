@@ -56,7 +56,7 @@ const HowItWorks = () => {
         ))}
         <div className="flex items-center justify-center gap-4 mt-12">
           <div className="flex flex-col items-start w-full md:w-auto justify-center">
-            <Link href="#" className="w-full md:w-auto">
+            <Link href="/" className="w-full md:w-auto">
               <button className="p-[3px] relative w-full md:w-auto">
                 <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-900 rounded-full" />
                 <div className="text-sm sm:text-lg flex justify-center text-center px-8 py-4 bg-black rounded-full relative group transition duration-200 text-slate-100 hover:bg-transparent">

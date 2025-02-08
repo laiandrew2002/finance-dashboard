@@ -22,18 +22,20 @@ type Plan = {
 const plans: Plan[] = [
   {
     name: "Free",
-    description: "For everyone starting out on a website for their big idea",
+    description: "For users who want to get started with finance tracking",
     price: 0,
     priceNote: "Free and open-source forever.",
     cta: {
       variant: "outline",
       label: "Get started for free",
-      href: "/docs/getting-started/introduction",
+      href: "/",
     },
     features: [
-      "9 landing page sections",
-      "36 components",
-      "5 custom animations",
+      "Track expenses & income manually",
+      "Monthly financial summary",
+      "Basic AI financial insights",
+      "No automated imports",
+      "Limited AI recommendations",
     ],
     featured: false,
     classes: "bg-transparent border border-input hidden lg:flex",
@@ -41,7 +43,7 @@ const plans: Plan[] = [
   {
     name: "Pro",
     icon: <User className="h-4 w-4" />,
-    description: "For early-stage founders, solopreneurs and indie devs",
+    description: "For users who want more control over their finances",
     price: 99,
     priceNote: "Lifetime access. Free updates. No recurring fees.",
     cta: {
@@ -50,10 +52,10 @@ const plans: Plan[] = [
       href: "/",
     },
     features: [
-      `72 landing page sections`,
-      `100 components`,
-      `12 illustrations`,
-      `15 custom animations`,
+      `Everything in Free`,
+      `Automated bank & crypto imports`,
+      `Advanced AI-driven financial analysis`,
+      `Custom financial goals & budget tracking`,
     ],
     featured: true,
     classes:
@@ -62,7 +64,7 @@ const plans: Plan[] = [
   {
     name: "Pro Team",
     icon: <Users className="h-4 w-4" />,
-    description: "For teams and agencies working on cool products together",
+    description: "For users who want to track multiple financial accounts",
     price: 499,
     priceNote: "Lifetime access. Free updates. No recurring fees.",
     cta: {
@@ -71,7 +73,10 @@ const plans: Plan[] = [
       href: "/",
     },
     features: [
-      "All the templates, components and sections available for your entire team",
+      "AI-powered investment recommendations",
+      "Unlimited custom categories & tracking",
+      "Early access to new features",
+      "Personalized 1:1 financial coaching",
     ],
     featured: false,
     classes:
@@ -88,8 +93,7 @@ export default function Pricing() {
             Take Control of Your Finances today.
           </h2>
           <p className="text-md max-w-[600px] font-medium text-muted-foreground sm:text-xl">
-            Get lifetime access to all the features. No recurring fees. Just
-            simple, transparent pricing.
+            Choose a plan that fits your financial tracking needs.
           </p>
         </div>
         <div className="mx-auto grid max-w-container grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 px-4">
