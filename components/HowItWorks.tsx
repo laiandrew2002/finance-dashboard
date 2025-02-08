@@ -38,7 +38,7 @@ const HowItWorks = () => {
   return (
     <div className="dark max-w-3xl mx-auto my-12">
       <div className="space-y-12 pb-10 px-8">
-        <h2 className="text-3xl md:text-5xl bg-clip-text font-bold text-transparent bg-gradient-to-r from-neutral-100 to-neutral-600 md:text-center font-sans">
+        <h2 className="text-center text-3xl md:text-5xl bg-clip-text font-bold text-transparent bg-gradient-to-r from-neutral-100 to-neutral-600 md:text-center font-sans">
           How FinTrack Works
         </h2>
         {steps.map((step, index) => (
@@ -59,7 +59,7 @@ const HowItWorks = () => {
             <Link href="#" className="w-full md:w-auto">
               <button className="p-[3px] relative w-full md:w-auto">
                 <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-900 rounded-full" />
-                <div className="px-8 py-4 bg-black rounded-full relative group transition duration-200 text-slate-100 hover:bg-transparent">
+                <div className="text-sm sm:text-lg flex justify-center text-center px-8 py-4 bg-black rounded-full relative group transition duration-200 text-slate-100 hover:bg-transparent">
                   Get Started
                 </div>
               </button>

@@ -8,15 +8,15 @@ import {
 
 const LandingFeatures = () => {
   return (
-    <div className="flex flex-col items-center justify-center mt-48 mb-28">
-      <h2 className="text-3xl md:text-5xl bg-clip-text font-bold text-transparent bg-gradient-to-r from-neutral-100 to-neutral-600 md:text-center font-sans group-hover:bg-gradient-to-r">
+    <div className="flex flex-col items-center justify-center mt-48 mb-28 p-4">
+      <h2 className="text-center text-3xl md:text-5xl bg-clip-text font-bold text-transparent bg-gradient-to-r from-neutral-100 to-neutral-600 md:text-center font-sans group-hover:bg-gradient-to-r">
         Why Choose FinTrack?
       </h2>
 
-      <p className="max-w-2xl text-base md:text-xl mt-8 mb-8 text-neutral-200">
+      <p className="text-center max-w-2xl text-base md:text-xl mt-8 mb-8 text-neutral-200">
         Track, Analyze, and Optimize Your Expenses with AI-Powered Insights.
       </p>
-      <div className="dark max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-4 gap-8 text-center mt-4 px-6">
+      <div className="dark max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center mt-4 px-2">
         <Card className="p-4">
           <div className="my-4 text-primary flex items-center justify-center">
             <HandCoinsIcon className="size-8" />

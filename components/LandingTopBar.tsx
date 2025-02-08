@@ -20,8 +20,8 @@ const LandingTopBar = () => {
       <aside className="flex items-center gap-[2px]">
         <Image
           src="/logo.svg"
-          width={36}
-          height={36}
+          width={42}
+          height={42}
           alt="finTrack Logo"
           className="shadow-sm"
         />
@@ -46,7 +46,7 @@ const LandingTopBar = () => {
         <Link href="#" className="w-full md:w-auto">
           <button className="p-[3px] relative w-full md:w-auto">
             <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-900 rounded-full" />
-            <div className="px-8 py-4 bg-black rounded-full relative group transition duration-200 text-slate-100 hover:bg-transparent">
+            <div className="text-sm md:text-lg px-8 py-4 bg-black rounded-full relative group transition duration-200 text-slate-100 hover:bg-transparent">
               {isSignedIn ? "Dashboard" : "Get Started"}
             </div>
           </button>

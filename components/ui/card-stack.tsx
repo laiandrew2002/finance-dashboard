@@ -46,7 +46,7 @@ export const CardStack = ({
         return (
           <motion.div
             key={card.id}
-            className="absolute bg-white h-auto min-h-64 w-72 md:w-96 rounded-3xl p-4 shadow-xl border border-neutral-200 shadow-black/[0.1]  flex flex-col justify-between"
+            className="absolute bg-white h-auto min-h-64 sm:w-80 md:w-96 rounded-3xl p-4 shadow-xl border border-neutral-200 shadow-black/[0.1]  flex flex-col justify-between"
             style={{
               transformOrigin: "top center",
             }}
