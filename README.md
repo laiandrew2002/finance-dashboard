@@ -5,7 +5,7 @@ A full-stack Income and Expenses Tracker SaaS web application built with Next.js
 This finance tracker application provides users with a comprehensive summary of their financial data, including income, expenses, and savings. Users has the ability to enter the transactions manually, import transactions from CSV files, or connect their bank accounts to automatically import transactions. The application also provides personalized financial advice based on the user's financial data.
 
 ## Features
-
+- **Landing Page**: Responsive landing page to show users the details about the application.
 - **Responsive Design**: Adjusts layout for desktop, tablet, and mobile views.
 - **Personalized Financial Advice**: AI-powered financial advice based on user's financial data.
 - **Transaction Management**: Users can enter transactions manually, import transactions from CSV files, or connect their bank accounts to automatically import transactions.
@@ -29,9 +29,13 @@ This finance tracker application provides users with a comprehensive summary of 
 
 ## Screenshots
 
-![Screenshot 1](./assets/finance-1.png)
-![Screenshot 2](./assets/finance-2.png)
-![Screenshot 3](./assets/finance-3.png)
+### Landing Page [Link](https://finance-tracker-pied-tau.vercel.app/welcome)
+![Screenshot 1](./assets/finance-4.png)
+
+### FinTrack App [Link] (https://finance-tracker-pied-tau.vercel.app/)
+![Screenshot 2](./assets/finance-1.png)
+![Screenshot 3](./assets/finance-2.png)
+![Screenshot 4](./assets/finance-3.png)
 
 ## Getting Started
 
